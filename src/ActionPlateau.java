@@ -2,13 +2,17 @@ import java.util.HashMap;
 
 public class ActionPlateau {
 
+	Plateau plateau;
 	/**
 	 * 
 	 * @param nombre
 	 */
-	public void insertionNum(int nombre) {
+	public void buildPlateau(){
+		plateau = new Plateau();
+	}
+	public void insertionNum(int number) {
 		// TODO - implement ActionPlateau.insertionNum
-		throw new UnsupportedOperationException();
+		plateau.put(number);
 	}
 
 	/**
