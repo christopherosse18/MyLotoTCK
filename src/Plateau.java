@@ -6,7 +6,7 @@ public class Plateau {
 	private HashMap<Integer, Integer> nombreTires;
 
 	public Plateau(){
-		HashMap<Integer, Integer> nombreTires = new HashMap<>();
+		nombreTires = initialiseNombres();
 	};
 	public Plateau(HashMap<Integer, Integer> nombreTires){
 		nombreTires = this.nombreTires;
@@ -21,6 +21,14 @@ public class Plateau {
 
 	public void put(int nombre){
 		nombreTires.put(nombre, nombre);
+	}
+
+	public HashMap<Integer, Integer> initialiseNombres(){
+		return new HashMap<>();
+	}
+
+	public boolean containsKey(int nombre){
+		return nombreTires.containsKey(nombre);
 	}
 
 }

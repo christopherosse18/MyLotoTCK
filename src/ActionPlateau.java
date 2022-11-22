@@ -21,15 +21,16 @@ public class ActionPlateau {
 	 * 
 	 * @param nombreRecherche
 	 */
-	public boolean rechercheNombre(int nombreRecherche, HashMap plateau) {
+	public boolean rechercheNombre(int nombreRecherche) {
 		if (plateau.containsKey(nombreRecherche)) {
-			System.out.println("Le nombre " + nombreRecherche + " est déjà sortit"); //à supprimer plus tard
+			System.out.println("Le nombre " + nombreRecherche + " est déjà sorti"); //à supprimer plus tard
 			return true;
 		} else {
-			System.out.println("le nombre " + nombreRecherche + " n'est pas encore sortit"); //à supprimer plus tard
+			System.out.println("le nombre " + nombreRecherche + " n'est pas encore sorti"); //à supprimer plus tard
 			return false;
 		}
 	}
+
 
 	/**
 	 * 
@@ -37,9 +38,9 @@ public class ActionPlateau {
 	 */
 	public boolean saisieEstBonne(String nombre) {
 		String message;
-		if (!checkNegatif(nombre)){
+		if (!checkEstString(nombre)){
 			return false;
-		} else if (!checkString(nombre)){
+		} else if (checkEstNegatif(nombre)){
 			return false;
 		} else {
 			return true;
@@ -47,7 +48,7 @@ public class ActionPlateau {
 
 	}
 
-	public boolean checkNegatif(String nombre){
+	public boolean checkEstNegatif(String nombre){
 		int intNombre = Integer.parseInt(nombre);
 		if (intNombre < 0){
 			return true;
@@ -56,9 +57,9 @@ public class ActionPlateau {
 		}
 	}
 
-	public boolean checkString(String nombre){
+	public boolean checkEstString(String nombre){
 		if(nombre.chars().allMatch(Character::isDigit)){
-			return false;
+			return true;
 		} else {
 			return false;
 		}
