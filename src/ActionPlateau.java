@@ -1,5 +1,3 @@
-import java.util.HashMap;
-
 public class ActionPlateau {
 
 	Plateau plateau;
@@ -9,10 +7,14 @@ public class ActionPlateau {
 	public String insertionNum(String nombre) {
 		String message;
 		if(saisieEstBonne(nombre)){
-			int intNombre = Integer.parseInt(nombre);
-			plateau.put(intNombre);
-			return message = "Le nombre "+intNombre+" a été saisi";
-		} else {
+			if (nombreEstSorti(Integer.parseInt(nombre))) {
+				return message = "Le nombre "+nombre+" a déjà été saisi";
+			} else {
+				int intNombre = Integer.parseInt(nombre);
+				plateau.put(intNombre);
+				return message = "Le nombre "+intNombre+" a été saisi";
+			}
+		}  else {
 			return message = "Le nombre est négatif ou invalide";
 		}
 	}
@@ -21,7 +23,7 @@ public class ActionPlateau {
 	 * 
 	 * @param nombreRecherche
 	 */
-	public boolean rechercheNombre(int nombreRecherche) {
+	public boolean nombreEstSorti(int nombreRecherche) {
 		if (plateau.containsKey(nombreRecherche)) {
 			System.out.println("Le nombre " + nombreRecherche + " est déjà sorti"); //à supprimer plus tard
 			return true;
