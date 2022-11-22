@@ -21,18 +21,18 @@ public class Admin {
 		};
 
 
-			//Message d'accueil
-			System.out.println("==================================\n"+
-							   "*** Bienvenue sur le MyLotoTCK ***\n"+
-							   "==================================");
-			//Initialisation deu jeu
-			System.out.println("...Initialisation des ressources du jeu...");
-			ActionPlateau plateau = new ActionPlateau();
-			plateau.buildPlateau();
-			for(int i=0; i<3; i++){
-				System.out.println("...");
-			};
-			System.out.println("==================================");
+		//Message d'accueil
+		System.out.println("==================================\n"+
+						   "*** Bienvenue sur le MyLotoTCK ***\n"+
+						   "==================================");
+		//Initialisation deu jeu
+		System.out.println("...Initialisation des ressources du jeu...");
+		ActionPlateau plateau = new ActionPlateau();
+		plateau.buildPlateau();
+		for(int i=0; i<3; i++){
+			System.out.println("...");
+		};
+		System.out.println("==================================");
 
 
 
@@ -49,7 +49,7 @@ public class Admin {
 				switch (option) {
 					case 1:
 						System.out.println("Entrez un nombre : ");
-						plateau.insertionNum(scanner.next());
+						System.out.println(plateau.insertionNum(scanner.next()));
 						break;
 					case 2:
 						System.out.println("Quel nombre voulez-vous chercher ? :");

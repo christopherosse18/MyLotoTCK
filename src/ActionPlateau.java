@@ -15,7 +15,7 @@ public class ActionPlateau {
 				return message = "Le nombre "+intNombre+" a été saisi";
 			}
 		}  else {
-			return message = "Le nombre est négatif ou invalide";
+			return message = "La saisie est négative ou n'est pas un nombre";
 		}
 	}
 
@@ -66,5 +66,9 @@ public class ActionPlateau {
 			return false;
 		}
 	}
+
+	/*public boolean checkEstRange(String nombre){
+		if
+	}*/
 
 }
