@@ -1,3 +1,4 @@
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,8 +12,8 @@ public class Plateau {
 	public Plateau(HashMap<Integer, Integer> nombreTires){
 		nombreTires = this.nombreTires;
 	}
-	public HashMap<Integer, Integer> getNombreTires() {
-		return this.nombreTires;
+	public Collection<Integer> getNombreTires() {
+		return this.nombreTires.values();
 	}
 
 	public void setNombreTires(HashMap<Integer, Integer> nombreTires) {

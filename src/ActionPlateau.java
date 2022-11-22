@@ -1,3 +1,5 @@
+import java.util.Collection;
+
 public class ActionPlateau {
 
 	Plateau plateau;
@@ -44,15 +46,16 @@ public class ActionPlateau {
 			return false;
 		} else if (checkEstNegatif(nombre)){
 			return false;
+		} else if (!checkEstRange(nombre)) {
+			return false;
 		} else {
 			return true;
 		}
-
 	}
 
 	public boolean checkEstNegatif(String nombre){
 		int intNombre = Integer.parseInt(nombre);
-		if (intNombre < 0){
+		if (intNombre < 1){
 			return true;
 		} else {
 			return false;
@@ -67,8 +70,16 @@ public class ActionPlateau {
 		}
 	}
 
-	/*public boolean checkEstRange(String nombre){
-		if
-	}*/
+	public boolean checkEstRange(String nombre){
+		int intNombre = Integer.parseInt(nombre);
+		if(intNombre > 90){
+			return false;
+		} else {
+			return true;
+		}
+	}
 
+	public Collection<Integer> getNombreTires(){
+		return this.plateau.getNombreTires();
+	}
 }
