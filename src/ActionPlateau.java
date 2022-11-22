@@ -3,6 +3,7 @@ import java.util.Collection;
 public class ActionPlateau {
 
 	Plateau plateau;
+
 	public void buildPlateau(){
 		plateau = new Plateau();
 	}
@@ -62,7 +63,7 @@ public class ActionPlateau {
 		}
 	}
 
-	public boolean checkEstString(String nombre){
+	public static boolean checkEstString(String nombre){
 		if(nombre.chars().allMatch(Character::isDigit)){
 			return true;
 		} else {

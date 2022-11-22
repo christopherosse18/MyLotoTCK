@@ -1,20 +1,25 @@
+import java.util.*;
+import java.util.stream.Collectors;
+
 public class Main {
     public static void main(String[] args) {
-        Admin.initJeu();
-/*        ActionPlateau plateau = new ActionPlateau();
-
+        GenerationCartes rangees = new GenerationCartes();
+        rangees.buildCartes();
+        ActionPlateau plateau = new ActionPlateau();
         plateau.buildPlateau();
+        System.out.println(rangees.getCarte());
+        System.out.println(plateau.insertionNum("1"));
+        System.out.println(plateau.insertionNum("14"));
+        System.out.println(plateau.insertionNum("35"));
+        System.out.println(plateau.insertionNum("56"));
+        System.out.println(plateau.insertionNum("71"));
+        System.out.println(plateau.insertionNum("87"));
+        System.out.println(plateau.insertionNum("88"));
+        System.out.println(plateau.insertionNum("89"));
+        System.out.println(plateau.plateau.getNombreTires());
+        System.out.println(Operation.nombresEnCommun(plateau.plateau.getNombreTires(), rangees.rangee1));
 
-        System.out.println(plateau.insertionNum("5"));
-        System.out.println(plateau.insertionNum("A"));
-        System.out.println(plateau.insertionNum("-1"));
-        System.out.println(plateau.insertionNum("20"));
-        System.out.println(plateau.insertionNum("38"));
-        System.out.println(plateau.insertionNum("A"));
-        System.out.println(plateau.nombreEstSorti(20));
-        System.out.println(plateau.nombreEstSorti(7));
+        //Admin.initJeu();
 
-        System.out.println(plateau.plateau.getNombreTires());*/
     }
-//testkev
 }
