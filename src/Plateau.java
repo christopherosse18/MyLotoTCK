@@ -5,6 +5,7 @@ public class Plateau {
 	private Map<Integer, Integer> nombreTires;
 
 	public Map getNombreTires() {
+
 		return this.nombreTires;
 	}
 
