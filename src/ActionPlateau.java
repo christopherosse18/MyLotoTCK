@@ -3,6 +3,7 @@ import java.util.Collection;
 public class ActionPlateau {
 
 	Plateau plateau;
+
 	public void buildPlateau(){
 		plateau = new Plateau();
 	}

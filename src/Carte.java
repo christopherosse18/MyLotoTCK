@@ -1,37 +1,47 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Carte {
 
-	private String nom;
-	private int[][] lignes;
+	//private int[][] rangees;
+	private String id;
+	private Rangee rangee;
 
-	/**
-	 * 
-	 * @param nom
-	 * @param lignes
-	 */
-	public Carte(String nom, int[][] lignes) {
-		// TODO - implement Carte.Carte
-		throw new UnsupportedOperationException();
+	public Carte(String id) {
+		this.id = id;
+		this.rangee = initialiseRangees();
 	}
 
-	public String getNom() {
-		return this.nom;
+	public Carte(String id, ArrayList<Integer> rangee1, ArrayList<Integer> rangee2, ArrayList<Integer> rangee3) {
+		this.id = id;
+		this.rangee = new Rangee(rangee1, rangee2, rangee3);
 	}
 
-	/**
-	 * 
-	 * @param nom
-	 */
-	public void setNom(String nom) {
-		this.nom = nom;
+	public String getId() {
+		return id;
 	}
 
-	/**
-	 * 
-	 * @param nomCarte
-	 */
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getRangees() {
+		return rangee.getRangees();
+	}
+
+	public String getCarte(){
+		return id+",\n[\n"+rangee.getRangees()+"\n]";
+	}
+
+	public void setRangee(Rangee rangee) {
+		this.rangee = rangee;
+	}
+
 	public void verifCarte(String nomCarte) {
-		// TODO - implement Carte.verifCarte
-		throw new UnsupportedOperationException();
+
+	}
+	public Rangee initialiseRangees(){
+		return new Rangee();
 	}
 
 }
