@@ -21,14 +21,11 @@ public class Operation {
                 ((nombresEnCommun(listeBase, carteAControler.rangee1).size() == 5) && (nombresEnCommun(listeBase, carteAControler.rangee3).size() == 5)) ||
                 ((nombresEnCommun(listeBase, carteAControler.rangee2).size() == 5) && (nombresEnCommun(listeBase, carteAControler.rangee3).size() == 5))) {
             carteAControler.setDoubleKineIsTrue(true);
-            System.out.println("DOUBLE KINE BRUH");
         }
         if ((nombresEnCommun(listeBase, carteAControler.rangee1).size() == 5) && (nombresEnCommun(listeBase, carteAControler.rangee2).size() == 5) &&
         (nombresEnCommun(listeBase, carteAControler.rangee3).size() == 5)) {
             carteAControler.setCartonIsTrue(true);
-            System.out.println("CARTON BRUH");
         }
     }
-
 
 }
