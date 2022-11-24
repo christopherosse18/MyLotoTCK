@@ -4,10 +4,8 @@ import static Jackson.MainReader.importCarteJson;
 
 public class Main {
     public static void main(String[] args) {
-        ListeCarte cartes = new ListeCarte();
-        cartes = importCarteJson();
-        /*GenerationCartes rangees = new GenerationCartes();
-        rangees.buildCartes();*/
+        //Importe les cartes et créé les objets
+        ListeCarte cartes = importCarteJson();
         ActionPlateau plateau = new ActionPlateau();
         plateau.buildPlateau();
         System.out.println(plateau.insertionNum("1"));
@@ -28,8 +26,11 @@ public class Main {
         System.out.println(plateau.insertionNum("73"));
         System.out.println(plateau.insertionNum("84"));
         System.out.println(plateau.plateau.getNombreTires());
+
+        //Récupère l'objet retourné par la méthode
         Carte tiree = cartes.getCarteById("A1");
-        /*System.out.println(Operation.nombresEnCommun(plateau.plateau.getNombreTires(), rangees.rangee1));*/
+        //Méthode pour vérifier si les n° tirés sont présent sur la carte
+        //passée dans le dernier paramètre
         Operation.checkCarte(plateau.plateau.getNombreTires(), tiree);
 
         //Admin.initJeu();

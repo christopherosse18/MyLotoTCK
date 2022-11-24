@@ -22,10 +22,12 @@ public class Operation {
                 ((nombresEnCommun(listeBase, carteAControler.getCarteRangee1()).size() == 5) && (nombresEnCommun(listeBase, carteAControler.getCarteRangee3()).size() == 5)) ||
                 ((nombresEnCommun(listeBase, carteAControler.getCarteRangee2()).size() == 5) && (nombresEnCommun(listeBase, carteAControler.getCarteRangee3()).size() == 5))) {
             carteAControler.setDoubleKineIsTrue(true);
+            System.out.println("DOUBLE KINE BRUH");
         }
         if ((nombresEnCommun(listeBase, carteAControler.getCarteRangee1()).size() == 5) && (nombresEnCommun(listeBase, carteAControler.getCarteRangee2()).size() == 5) &&
         (nombresEnCommun(listeBase, carteAControler.getCarteRangee3()).size() == 5)) {
             carteAControler.setCartonIsTrue(true);
+            System.out.println("CARTON BRUH");
         }
     }
 
