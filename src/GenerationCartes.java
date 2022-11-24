@@ -1,10 +1,9 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 
 public class GenerationCartes {
 
-	private Carte cartes;
+	private Carte carte;
 
 
 	ArrayList rangee1 = new ArrayList<>(Arrays.asList(14,35,56,71,87));
@@ -12,7 +11,7 @@ public class GenerationCartes {
 	ArrayList rangee3 = new ArrayList<>(Arrays.asList(12,36,57,73,84));
 
 	public void buildCartes(){
-		cartes = new Carte("A1", rangee1, rangee2, rangee3);
+		carte = new Carte("A1", rangee1, rangee2, rangee3);
 	};
 
 	/*public static boolean checkRangee(Collection<Integer> nombreTires){
@@ -20,19 +19,51 @@ public class GenerationCartes {
 	public static void checkCarte(Carte carte, Collection<Integer> nombreTires){
 	}*/
 
-	public Carte getCartes() {
-		return this.cartes;
+	public Carte getCarte() {
+		return this.carte;
 	}
 
-	public String getCarte(){return cartes.getCarte()
+	public String getCarteAsString(){return carte.getCarteAsString()
 			/*Arrays.deepToString(rangees)*/;}
-	public String getRangees(){return cartes.getRangees()
+	public String getRangees(){return carte.getRangees()
 			/*Arrays.deepToString(rangees)*/;}
 
-	public void setCartes(Carte cartes) {
-		this.cartes = cartes;
+	public void setCarte(Carte carte) {
+		this.carte = carte;
 	}
 
+	public ArrayList<Integer> getCarteRangee1() {
+		return carte.getCarteRangee1();
+	}
 
+	public ArrayList<Integer> getCarteRangee2() {
+		return carte.getCarteRangee2();
+	}
+	public ArrayList<Integer> getCarteRangee3() {
+		return carte.getCarteRangee3();
+	}
 
+	public void setKineIsTrue(boolean kineIsTrue) {
+		carte.setKineIsTrue(kineIsTrue);
+	}
+
+	public boolean getDoubleKineIsTrue() {
+		return carte.getDoubleKineIsTrue();
+	}
+
+	public boolean getCartonIsTrue() {
+		return carte.getCartonIsTrue();
+	}
+
+	public boolean getKineIsTrue() {
+		return carte.getKineIsTrue();
+	}
+
+	public void setDoubleKineIsTrue(boolean doubleKineIsTrue) {
+		carte.setDoubleKineIsTrue(doubleKineIsTrue);
+	}
+
+	public void setCartonIsTrue(boolean cartonIsTrue) {
+		carte.setCartonIsTrue(cartonIsTrue);
+	}
 }
