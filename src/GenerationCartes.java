@@ -12,21 +12,14 @@ public class GenerationCartes {
 
 	public void buildCartes(){
 		carte = new Carte("A1", rangee1, rangee2, rangee3);
-	};
-
-	/*public static boolean checkRangee(Collection<Integer> nombreTires){
 	}
-	public static void checkCarte(Carte carte, Collection<Integer> nombreTires){
-	}*/
 
 	public Carte getCarte() {
 		return this.carte;
 	}
 
-	public String getCarteAsString(){return carte.getCarteAsString()
-			/*Arrays.deepToString(rangees)*/;}
-	public String getRangees(){return carte.getRangees()
-			/*Arrays.deepToString(rangees)*/;}
+	public String getCarteAsString(){return carte.getCarteAsString();}
+	public String getRangees(){return carte.getRangees();}
 
 	public void setCarte(Carte carte) {
 		this.carte = carte;
