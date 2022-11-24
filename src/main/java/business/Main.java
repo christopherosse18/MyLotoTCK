@@ -1,14 +1,15 @@
-import java.util.*;
-import java.util.stream.Collectors;
+package business;
+
+import static Jackson.MainReader.importCarteJson;
 
 public class Main {
     public static void main(String[] args) {
-
-        GenerationCartes rangees = new GenerationCartes();
-        rangees.buildCartes();
+        ListeCarte cartes = new ListeCarte();
+        cartes = importCarteJson();
+        /*GenerationCartes rangees = new GenerationCartes();
+        rangees.buildCartes();*/
         ActionPlateau plateau = new ActionPlateau();
         plateau.buildPlateau();
-        System.out.println(rangees.getCarte());
         System.out.println(plateau.insertionNum("1"));
         System.out.println(plateau.insertionNum("14"));
         System.out.println(plateau.insertionNum("35"));
@@ -27,9 +28,9 @@ public class Main {
         System.out.println(plateau.insertionNum("73"));
         System.out.println(plateau.insertionNum("84"));
         System.out.println(plateau.plateau.getNombreTires());
-        System.out.println(Operation.nombresEnCommun(plateau.plateau.getNombreTires(), rangees.rangee1));
-        Operation.checkCarte(plateau.plateau.getNombreTires(), rangees);
-        System.out.println(rangees.getKineIsTrue());
+        Carte tiree = cartes.getCarteById("A1");
+        /*System.out.println(Operation.nombresEnCommun(plateau.plateau.getNombreTires(), rangees.rangee1));*/
+        Operation.checkCarte(plateau.plateau.getNombreTires(), tiree);
 
         //Admin.initJeu();
 
