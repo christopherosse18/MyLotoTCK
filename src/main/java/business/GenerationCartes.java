@@ -1,3 +1,5 @@
+package business;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -5,14 +7,12 @@ public class GenerationCartes {
 
 	private Carte carte;
 
-
-	ArrayList rangee1 = new ArrayList<>(Arrays.asList(14,35,56,71,87));
-	ArrayList rangee2 = new ArrayList<>(Arrays.asList(1,21,40,69,82));
-	ArrayList rangee3 = new ArrayList<>(Arrays.asList(12,36,57,73,84));
-
-	public void buildCartes(){
-		carte = new Carte("A1", rangee1, rangee2, rangee3);
-	}
+	/*public void buildCartes(){
+		carte = new Carte("A1");
+		Rangee rangee = new Rangee();
+		ran
+		carte.setRangee();
+	}*/
 
 	public Carte getCarte() {
 		return this.carte;

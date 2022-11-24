@@ -1,3 +1,5 @@
+package business;
+
 import java.util.ArrayList;
 
 public class Carte {
@@ -9,6 +11,9 @@ public class Carte {
 	private boolean doubleKineIsTrue;
 	private boolean cartonIsTrue;
 
+	public Carte(){
+
+	}
 	public Carte(String id) {
 		this.id = id;
 		this.rangee = initialiseRangees();
@@ -51,14 +56,14 @@ public class Carte {
 	}
 
 	public ArrayList<Integer> getCarteRangee1() {
-		return rangee.rangee1;
+		return rangee.getRangee1();
 	}
 
 	public ArrayList<Integer> getCarteRangee2() {
-		return rangee.rangee2;
+		return rangee.getRangee2();
 	}
 	public ArrayList<Integer> getCarteRangee3() {
-		return rangee.rangee1;
+		return rangee.getRangee3();
 	}
 
 	public Rangee getRangee() {
@@ -87,5 +92,16 @@ public class Carte {
 
 	public void setCartonIsTrue(boolean cartonIsTrue) {
 		this.cartonIsTrue = cartonIsTrue;
+	}
+
+	@Override
+	public String toString() {
+		return "Carte{" +
+				"id='" + id + '\'' +
+				", rangee=" + rangee +
+				", kineIsTrue=" + kineIsTrue +
+				", doubleKineIsTrue=" + doubleKineIsTrue +
+				", cartonIsTrue=" + cartonIsTrue +
+				'}';
 	}
 }

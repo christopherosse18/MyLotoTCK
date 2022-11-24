@@ -1,3 +1,5 @@
+package business;
+
 import java.util.Collection;
 
 public class ActionPlateau {

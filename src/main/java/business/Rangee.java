@@ -1,3 +1,5 @@
+package business;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -43,5 +45,14 @@ public class Rangee {
 
     public String getRangees(){
         return rangee1.toString()+"\n"+rangee2.toString()+"\n"+rangee3.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Rangee{" +
+                "rangee1=" + rangee1 +
+                ", rangee2=" + rangee2 +
+                ", rangee3=" + rangee3 +
+                '}';
     }
 }
