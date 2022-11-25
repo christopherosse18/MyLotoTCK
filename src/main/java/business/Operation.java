@@ -16,18 +16,18 @@ public class Operation {
         if ((nombresEnCommun(listeBase, carteAControler.getCarteRangee1()).size() == 5) || (nombresEnCommun(listeBase, carteAControler.getCarteRangee2()).size() == 5)
         || (nombresEnCommun(listeBase, carteAControler.getCarteRangee3()).size() == 5)){
             carteAControler.setKineIsTrue(true);
-            System.out.println("la carte "+carteAControler.getId()+" a une KINE BRUH");
+            //System.out.println("la carte "+carteAControler.getId()+" a une KINE BRUH");
         }
         if (((nombresEnCommun(listeBase, carteAControler.getCarteRangee1()).size() == 5) && (nombresEnCommun(listeBase, carteAControler.getCarteRangee2()).size() == 5)) ||
                 ((nombresEnCommun(listeBase, carteAControler.getCarteRangee1()).size() == 5) && (nombresEnCommun(listeBase, carteAControler.getCarteRangee3()).size() == 5)) ||
                 ((nombresEnCommun(listeBase, carteAControler.getCarteRangee2()).size() == 5) && (nombresEnCommun(listeBase, carteAControler.getCarteRangee3()).size() == 5))) {
             carteAControler.setDoubleKineIsTrue(true);
-            System.out.println("la carte "+carteAControler.getId()+" a une DOUBLE KINE BRUH");
+           // System.out.println("la carte "+carteAControler.getId()+" a une DOUBLE KINE BRUH");
         }
         if ((nombresEnCommun(listeBase, carteAControler.getCarteRangee1()).size() == 5) && (nombresEnCommun(listeBase, carteAControler.getCarteRangee2()).size() == 5) &&
         (nombresEnCommun(listeBase, carteAControler.getCarteRangee3()).size() == 5)) {
             carteAControler.setCartonIsTrue(true);
-            System.out.println("la carte "+carteAControler.getId()+" a une CARTON BRUH");
+           // System.out.println("la carte "+carteAControler.getId()+" a une CARTON BRUH");
         }
     }
 

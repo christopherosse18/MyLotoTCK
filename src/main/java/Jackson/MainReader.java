@@ -46,9 +46,9 @@ public class MainReader {
                 Carte carte = new Carte(id, listeR1, listeR2, listeR3);
                 cartes.getCartes().add(carte);
             }
-            logger.log(Level.INFO, cartes.toString());
+            //logger.log(Level.INFO, cartes.toString());
         } catch (IOException ex) {
-            logger.log(Level.SEVERE, null, ex);
+           logger.log(Level.SEVERE, null, ex);
         }
         return cartes;
     }

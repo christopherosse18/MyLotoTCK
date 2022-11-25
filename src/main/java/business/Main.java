@@ -4,6 +4,7 @@ import static Jackson.MainReader.importCarteJson;
 
 public class Main {
     public static void main(String[] args) {
+        /*
         //Importe les cartes et créé les objets
         ListeCarte cartes = importCarteJson();
         ActionPlateau plateau = new ActionPlateau();
@@ -32,8 +33,8 @@ public class Main {
         //Méthode pour vérifier si les n° tirés sont présent sur la carte
         //passée dans le dernier paramètre
         Operation.checkCarte(plateau.plateau.getNombreTires(), tiree);
-
-        //Admin.initJeu();
+        */
+        Admin.initJeu();
 
     }
 }
