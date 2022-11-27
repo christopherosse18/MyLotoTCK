@@ -83,8 +83,14 @@ public class Admin {
                     break;
                 //Recherche d'un nombre
                 case 2:
+                    int nombreRecherche;
                     System.out.println("Quel nombre voulez-vous chercher ? : ");
-                    System.out.println(plateau.nombreEstSorti(scanner.nextInt()));
+                    nombreRecherche = scanner.nextInt();
+                    if(plateau.nombreEstSorti(nombreRecherche)){
+                        System.out.println("Le nombre " + nombreRecherche + " est déjà sorti");
+                    } else{
+                        System.out.println("Le nombre " + nombreRecherche + " n'est pas encore sorti");
+                    }
                     break;
                 //Vérification d'une carte
                 case 3:

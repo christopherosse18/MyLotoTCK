@@ -33,10 +33,8 @@ public class GestionPlateau {
 	 */
 	public boolean nombreEstSorti(int nombreRecherche) {
 		if (plateau.containsKey(nombreRecherche)) {
-			System.out.println("Le nombre " + nombreRecherche + " est déjà sorti"); //à supprimer plus tard
 			return true;
 		} else {
-			System.out.println("le nombre " + nombreRecherche + " n'est pas encore sorti"); //à supprimer plus tard
 			return false;
 		}
 	}
