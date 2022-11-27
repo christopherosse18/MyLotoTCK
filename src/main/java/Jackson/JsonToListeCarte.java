@@ -15,8 +15,8 @@ import java.util.logging.Logger;
 public class JsonToListeCarte {
     private static final Logger logger = Logger.getLogger(JsonToListeCarte.class.getName());
 
-    public static GestionCartes importCarteJson() {
-        GestionCartes cartes = new GestionCartes();
+    public static ListeCarte importCarteJson() {
+        ListeCarte cartes = new ListeCarte();
         try {
             ObjectMapper om = new ObjectMapper();
             JsonNode rootNode = om.readTree(new File("cartesLoto.json"));

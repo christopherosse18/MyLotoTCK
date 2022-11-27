@@ -6,6 +6,7 @@ import business.Plateau;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import static operations.Operation.nombresEnCommun;
 
@@ -44,5 +45,9 @@ public class GestionCartes {
 	}
 	public void add(Carte carte){
 		cartes.getCartes().add(carte);
+	}
+
+	public void setCartes(ListeCarte cartes){
+		this.cartes.setCartes(cartes);
 	}
 }

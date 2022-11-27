@@ -7,6 +7,7 @@ public class ListeCarte {
 
     private List<Carte> cartes = new ArrayList<>();
 
+
     public ListeCarte() {
     }
 
@@ -14,8 +15,8 @@ public class ListeCarte {
         return cartes;
     }
 
-    public void setCartes(List<Carte> cartes) {
-        this.cartes = cartes;
+    public void setCartes(ListeCarte cartes) {
+        this.cartes = cartes.getCartes();
     }
 
     public Carte getCarteById(String id){
@@ -34,5 +35,9 @@ public class ListeCarte {
         return "ListeCarte{" +
                 "cartes=" + cartes.toString() +
                 '}'+"\n";
+    }
+
+    public void add(Carte carte) {
+        cartes.add(carte);
     }
 }

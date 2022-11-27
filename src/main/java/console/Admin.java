@@ -44,7 +44,7 @@ public class Admin {
             //Import des cartes
         GestionCartes cartes = new GestionCartes();
         cartes.buildListeCarte();
-        cartes = PersistenceLoto.readerListeCarteJson();
+        cartes.setCartes(PersistenceLoto.readerListeCarteJson());
             //Création du plateau de jeu
         GestionPlateau plateau = new GestionPlateau();
         plateau.buildPlateau();
