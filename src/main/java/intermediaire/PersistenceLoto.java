@@ -5,7 +5,7 @@ import business.ListeCarte;
 
 public class PersistenceLoto {
 
-    public static ListeCarte readerListeCarteJson(){
+    public static GestionCartes readerListeCarteJson(){
         return JsonToListeCarte.importCarteJson();
     }
 }

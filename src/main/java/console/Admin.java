@@ -1,14 +1,12 @@
 package console;
 
 import business.Carte;
-import business.ListeCarte;
 import intermediaire.GestionCartes;
 import intermediaire.GestionPlateau;
 import intermediaire.PersistenceLoto;
 
 import java.util.Scanner;
 
-import static Jackson.JsonToListeCarte.importCarteJson;
 import static java.lang.System.exit;
 
 public class Admin {
@@ -22,7 +20,7 @@ public class Admin {
     }
 
     //Initialisation des options du menu
-    public static void initJeu() {
+    public static void initInterface() {
         String[] options = {"1- Inserer un nombre",
                 "2- Rechercher un nombre",
                 "3- Verification de carte",
@@ -44,7 +42,9 @@ public class Admin {
         //Initialisation des ressources du jeu
         System.out.println("...Initialisation des ressources du jeu...");
             //Import des cartes
-        ListeCarte cartes = PersistenceLoto.readerListeCarteJson();
+        GestionCartes cartes = new GestionCartes();
+        cartes.buildListeCarte();
+        cartes = PersistenceLoto.readerListeCarteJson();
             //Création du plateau de jeu
         GestionPlateau plateau = new GestionPlateau();
         plateau.buildPlateau();

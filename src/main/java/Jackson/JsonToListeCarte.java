@@ -4,6 +4,7 @@ import business.Carte;
 import business.ListeCarte;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import intermediaire.GestionCartes;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,8 +15,8 @@ import java.util.logging.Logger;
 public class JsonToListeCarte {
     private static final Logger logger = Logger.getLogger(JsonToListeCarte.class.getName());
 
-    public static ListeCarte importCarteJson() {
-        ListeCarte cartes = new ListeCarte();
+    public static GestionCartes importCarteJson() {
+        GestionCartes cartes = new GestionCartes();
         try {
             ObjectMapper om = new ObjectMapper();
             JsonNode rootNode = om.readTree(new File("cartesLoto.json"));
@@ -42,7 +43,7 @@ public class JsonToListeCarte {
                 }
 
                 Carte carte = new Carte(id, listeR1, listeR2, listeR3);
-                cartes.getCartes().add(carte);
+                cartes.add(carte);
             }
             //logger.log(Level.INFO, cartes.toString());
         } catch (IOException ex) {
