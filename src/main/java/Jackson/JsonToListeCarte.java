@@ -4,7 +4,6 @@ import business.Carte;
 import business.ListeCarte;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import intermediaire.GestionCartes;
 
 import java.io.File;
 import java.io.IOException;
@@ -47,7 +46,7 @@ public class JsonToListeCarte {
             }
             //logger.log(Level.INFO, cartes.toString());
         } catch (IOException ex) {
-           logger.log(Level.SEVERE, null, ex);
+            logger.log(Level.SEVERE, null, ex);
         }
         return cartes;
     }

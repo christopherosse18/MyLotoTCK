@@ -19,11 +19,11 @@ public class ListeCarte {
         this.cartes = cartes.getCartes();
     }
 
-    public Carte getCarteById(String id){
+    public Carte getCarteById(String id) {
         Carte carteTrouvee = new Carte();
-        for (Carte carte:
-             cartes) {
-            if (carte.getId().equals(id)){
+        for (Carte carte :
+                cartes) {
+            if (carte.getId().equals(id)) {
                 carteTrouvee = carte;
             }
         }
@@ -34,7 +34,7 @@ public class ListeCarte {
     public String toString() {
         return "ListeCarte{" +
                 "cartes=" + cartes.toString() +
-                '}'+"\n";
+                '}' + "\n";
     }
 
     public void add(Carte carte) {

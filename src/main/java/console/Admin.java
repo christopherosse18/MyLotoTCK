@@ -41,11 +41,11 @@ public class Admin {
 
         //Initialisation des ressources du jeu
         System.out.println("...Initialisation des ressources du jeu...");
-            //Import des cartes
+        //Import des cartes
         GestionCartes cartes = new GestionCartes();
         cartes.buildListeCarte();
         cartes.setCartes(PersistenceLoto.readerListeCarteJson());
-            //Création du plateau de jeu
+        //Création du plateau de jeu
         GestionPlateau plateau = new GestionPlateau();
         plateau.buildPlateau();
         //Séparateurs
@@ -120,7 +120,7 @@ public class Admin {
                             phaseDoubleKine = true;
                         } else if (!carteJoueur.getKineIsTrue() && !carteJoueur.getDoubleKineIsTrue() && !carteJoueur.getCartonIsTrue()) {
                             System.out.println("La carte " + carteJoueur.getId() + " n'a rien");
-                        //Check de la double Kine
+                            //Check de la double Kine
                         } else if (carteJoueur.getDoubleKineIsTrue() && carteJoueur.getKineIsTrue() && !carteJoueur.getCartonIsTrue() && phaseDoubleKine) {
                             System.out.println("La carte " + carteJoueur.getId() + " a bien une double Kine !");
                             //Fin de la phase de double Kine
@@ -129,7 +129,7 @@ public class Admin {
                             phaseCarton = true;
                         } else if (!carteJoueur.getDoubleKineIsTrue() && carteJoueur.getKineIsTrue() && !carteJoueur.getCartonIsTrue()) {
                             System.out.println("La carte " + carteJoueur.getId() + " n'a pas de double Kine !");
-                        //Check du Carton
+                            //Check du Carton
                         } else if (carteJoueur.getCartonIsTrue() && carteJoueur.getKineIsTrue() && carteJoueur.getDoubleKineIsTrue() && phaseCarton) {
                             System.out.println("La carte " + carteJoueur.getId() + " a carton");
                             System.out.println("Partie terminée ! Féliciations aux vainqueurs");
@@ -137,7 +137,7 @@ public class Admin {
                         } else if (!carteJoueur.getCartonIsTrue() && carteJoueur.getDoubleKineIsTrue() && carteJoueur.getKineIsTrue()) {
                             System.out.println("La carte " + carteJoueur.getId() + " n'a pas de carton");
                         }
-                    //Gestion de l'erreur si la carte n'existe pas
+                        //Gestion de l'erreur si la carte n'existe pas
                     } catch (Exception ex4) {
                         System.out.println("La carte n'existe pas");
                     }
@@ -150,7 +150,7 @@ public class Admin {
                 //Quitter le programme
                 case 5:
                     exit(0);
-                //Gestion de l'erreur si aucun numéro rentré ne correspond à une option du menu
+                    //Gestion de l'erreur si aucun numéro rentré ne correspond à une option du menu
                 default:
                     System.out.println("/!\\ ERREUR /!\\ Vous n'avez pas saisi un nombre entier entre 1 et "
                             + options.length);
