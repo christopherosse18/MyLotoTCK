@@ -1,8 +1,14 @@
-package business;
+package console;
+
+import business.Carte;
+import business.ListeCarte;
+import intermediaire.GestionCartes;
+import intermediaire.GestionPlateau;
+import intermediaire.PersistenceLoto;
 
 import java.util.Scanner;
 
-import static Jackson.MainReader.importCarteJson;
+import static Jackson.JsonToListeCarte.importCarteJson;
 import static java.lang.System.exit;
 
 public class Admin {
@@ -38,9 +44,9 @@ public class Admin {
         //Initialisation des ressources du jeu
         System.out.println("...Initialisation des ressources du jeu...");
             //Import des cartes
-        ListeCarte cartes = importCarteJson();
+        ListeCarte cartes = PersistenceLoto.readerListeCarteJson();
             //Création du plateau de jeu
-        ActionPlateau plateau = new ActionPlateau();
+        GestionPlateau plateau = new GestionPlateau();
         plateau.buildPlateau();
         //Séparateurs
         for (int i = 0; i < 3; i++) {
@@ -88,7 +94,7 @@ public class Admin {
                     try {
                         //Lecture de l'input de l'ID de carte
                         carteJoueur = cartes.getCarteById(scanner.next().toUpperCase());
-                        Operation.checkCarte(plateau.plateau.getNombreTires(), carteJoueur);
+                        GestionCartes.checkCarte(plateau.plateau.getNombreTires(), carteJoueur);
                         //Gestion de la possibilité d'avoir directement une double kine
                         if (carteJoueur.getDoubleKineIsTrue()) {
                             //Début de la phase de double Kine

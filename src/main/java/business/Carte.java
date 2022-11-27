@@ -44,13 +44,6 @@ public class Carte {
 		return id+",\n[\n"+rangee.getRangees()+"\n]";
 	}
 
-	public void setRangee(Rangee rangee) {
-		this.rangee = rangee;
-	}
-
-	public void verifCarte(String nomCarte) {
-
-	}
 	public Rangee initialiseRangees(){
 		return new Rangee();
 	}

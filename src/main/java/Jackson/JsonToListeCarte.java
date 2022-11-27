@@ -2,19 +2,17 @@ package Jackson;
 
 import business.Carte;
 import business.ListeCarte;
-import business.Rangee;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class MainReader {
-    private static final Logger logger = Logger.getLogger(MainReader.class.getName());
+public class JsonToListeCarte {
+    private static final Logger logger = Logger.getLogger(JsonToListeCarte.class.getName());
 
     public static ListeCarte importCarteJson() {
         ListeCarte cartes = new ListeCarte();
