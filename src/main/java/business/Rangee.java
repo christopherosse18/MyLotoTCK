@@ -1,7 +1,6 @@
 package business;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Rangee {
     public ArrayList<Integer> rangee1;
@@ -13,6 +12,7 @@ public class Rangee {
         this.rangee2 = new ArrayList<Integer>();
         this.rangee3 = new ArrayList<Integer>();
     }
+
     public Rangee(ArrayList<Integer> rangee1, ArrayList<Integer> rangee2, ArrayList<Integer> rangee3) {
         this.rangee1 = rangee1;
         this.rangee2 = rangee2;
@@ -43,8 +43,8 @@ public class Rangee {
         this.rangee3 = rangee3;
     }
 
-    public String getRangees(){
-        return rangee1.toString()+"\n"+rangee2.toString()+"\n"+rangee3.toString();
+    public String getRangees() {
+        return rangee1.toString() + "\n" + rangee2.toString() + "\n" + rangee3.toString();
     }
 
     @Override
