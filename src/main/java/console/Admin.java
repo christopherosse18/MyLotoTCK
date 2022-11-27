@@ -69,8 +69,7 @@ public class Admin {
             try {
                 choixMenu = Integer.parseInt(option);
             } catch (Exception ex2) {
-                System.out.println("/!\\ ERREUR /!\\ Vous n'avez pas entre un nombre entier entre 1 et "
-                        + options.length);
+                System.out.println("/!\\ ERREUR /!\\ Vous n'avez pas saisi une option valide");
                 System.out.println("==================================");
                 continue;
             }
@@ -105,35 +104,52 @@ public class Admin {
                         if (carteJoueur.getDoubleKineIsTrue()) {
                             //Début de la phase de double Kine
                             phaseDoubleKine = true;
+                           // System.out.println("-------- Phase Double-Quine entamée --------");
                         }
                         //Gestion de la possibilité d'avoir directement un carton
                         if (carteJoueur.getCartonIsTrue()) {
                             //Début de la phase de carton
                             phaseCarton = true;
+                           // System.out.println("-------- Phase Carton entamée --------");
                         }
                         //Check de la Kine
                         if (carteJoueur.getKineIsTrue() && !carteJoueur.getDoubleKineIsTrue() && !carteJoueur.getCartonIsTrue() && phaseKine) {
-                            System.out.println("La carte " + carteJoueur.getId() + " a bien une Kine !");
-                            //Fin de la phase de Kine
-                            phaseKine = false;
-                            //Début de la phase de double Kine
-                            phaseDoubleKine = true;
+                            System.out.println("La carte " + carteJoueur.getId() + " a bien une Quine !");
+
+                            System.out.println("Voulez-vous passer à la phase double-quine ? (1 pour changer de phase, 0 pour contrôler une autre carte Quine)");
+                            if(scanner.nextInt() == 1) {
+                                //Fin de la phase Kine
+                                phaseKine = false;
+                                System.out.println("-------- Phase Quine terminée --------");
+                                //Début de la phase double Kine
+                                phaseDoubleKine = true;
+                                System.out.println("-------- Phase Double-Quine entamée --------");
+                            }
                         } else if (!carteJoueur.getKineIsTrue() && !carteJoueur.getDoubleKineIsTrue() && !carteJoueur.getCartonIsTrue()) {
                             System.out.println("La carte " + carteJoueur.getId() + " n'a rien");
                             //Check de la double Kine
                         } else if (carteJoueur.getDoubleKineIsTrue() && carteJoueur.getKineIsTrue() && !carteJoueur.getCartonIsTrue() && phaseDoubleKine) {
-                            System.out.println("La carte " + carteJoueur.getId() + " a bien une double Kine !");
-                            //Fin de la phase de double Kine
-                            phaseDoubleKine = false;
-                            //Début de la phase de Carton
-                            phaseCarton = true;
+                            System.out.println("La carte " + carteJoueur.getId() + " a bien une double Quine !");
+                            System.out.println("Voulez-vous passer à la phase carton ? (1 pour changer de phase, 0 pour contrôler une autre carte Double-Quine)");
+                            if(scanner.nextInt() == 1) {
+                                //Fin de la phase de double Kine
+                                phaseDoubleKine = false;
+                                System.out.println("-------- Phase Double-Quine terminée --------");
+                                //Début de la phase de Carton
+                                phaseCarton = true;
+                                System.out.println("-------- Phase Carton entamée --------");
+                            }
                         } else if (!carteJoueur.getDoubleKineIsTrue() && carteJoueur.getKineIsTrue() && !carteJoueur.getCartonIsTrue()) {
-                            System.out.println("La carte " + carteJoueur.getId() + " n'a pas de double Kine !");
+                            System.out.println("La carte " + carteJoueur.getId() + " n'a pas de double Quine !");
                             //Check du Carton
                         } else if (carteJoueur.getCartonIsTrue() && carteJoueur.getKineIsTrue() && carteJoueur.getDoubleKineIsTrue() && phaseCarton) {
                             System.out.println("La carte " + carteJoueur.getId() + " a carton");
-                            System.out.println("Partie terminée ! Féliciations aux vainqueurs");
-                            exit(0);
+
+                            System.out.println("Voulez-vous mettre fin à la partie ? (1 pour changer de phase, 0 pour contrôler une autre carte Carton)");
+                            if(scanner.nextInt() == 1) {
+                                System.out.println("Partie terminée ! Féliciations aux vainqueurs");
+                                exit(0);
+                            }
                         } else if (!carteJoueur.getCartonIsTrue() && carteJoueur.getDoubleKineIsTrue() && carteJoueur.getKineIsTrue()) {
                             System.out.println("La carte " + carteJoueur.getId() + " n'a pas de carton");
                         }
@@ -152,9 +168,7 @@ public class Admin {
                     exit(0);
                     //Gestion de l'erreur si aucun numéro rentré ne correspond à une option du menu
                 default:
-                    System.out.println("/!\\ ERREUR /!\\ Vous n'avez pas saisi un nombre entier entre 1 et "
-                            + options.length);
-
+                    System.out.println("/!\\ ERREUR /!\\ Vous n'avez pas saisi une option valide");
             }
 
             //Séparateur
